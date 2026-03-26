@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Nine Beauty — 5-Star Beauty Salon in Coleraine</title>
+<meta name="description" content="Cloud Nine Beauty — Coleraine's premier beauty salon offering facials, skincare, dermaplaning, chemical peels, makeup, waxing and more. 4.8 stars on Google. Call +44 7715 879518.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --olive: #8B7E3B;
+  --olive-dark: #6B612E;
+  --olive-light: #A89A4F;
+  --gold-warm: #B5A24E;
+  --sage-bg: #f5f3ee;
+  --warm-cream: #f0ede6;
+  --white: #ffffff;
+  --dark: #1a1a1e;
+  --dark-text: #2a2a2e;
+  --body-text: #444;
+  --light-text: #888;
+  --green-wa: #25D366;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--body-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--dark-text); line-height: 1.25; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ============ HEADER ============ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s;
+}
+.header-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.site-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--olive);
+  text-decoration: none;
+}
+.header-nav { display: flex; align-items: center; gap: 28px; }
+.header-nav a {
+  text-decoration: none; font-size: 0.92rem; font-weight: 500;
+  color: var(--dark-text); transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--olive); }
+.btn-wa-header {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-wa); color: #fff; border: none; border-radius: 50px;
+  padding: 9px 18px; font-size: 0.88rem; font-weight: 600;
+  text-decoration: none; transition: background 0.2s, transform 0.2s;
+}
+.btn-wa-header:hover { background: #1fb855; transform: translateY(-1px); }
+.btn-wa-header svg { width: 16px; height: 16px; }
+.btn-cta-header {
+  display: inline-flex; align-items: center;
+  background: var(--olive); color: #fff; border-radius: 50px;
+  padding: 9px 20px; font-size: 0.88rem; font-weight: 600;
+  text-decoration: none; transition: background 0.2s, transform 0.2s;
+}
+.btn-cta-header:hover { background: var(--olive-dark); transform: translateY(-1px); }
+
+/* Mobile menu */
+.menu-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 32px; position: relative;
+}
+.menu-toggle span {
+  display: block; width: 24px; height: 2px; background: var(--dark-text);
+  position: absolute; left: 4px; transition: 0.3s;
+}
+.menu-toggle span:nth-child(1) { top: 8px; }
+.menu-toggle span:nth-child(2) { top: 15px; }
+.menu-toggle span:nth-child(3) { top: 22px; }
+.menu-toggle.active span:nth-child(1) { top: 15px; transform: rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .header-nav {
+    display: none; flex-direction: column; position: absolute;
+    top: 68px; left: 0; right: 0; background: #fff;
+    padding: 20px 24px; gap: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .header-nav.open { display: flex; }
+  .header-nav a { font-size: 1.05rem; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  background: linear-gradient(rgba(26,26,30,0.55), rgba(26,26,30,0.55)),
+    url('images/hero9desk.png') center/cover no-repeat;
+  min-height: 92vh; display: flex; align-items: center;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+.hero-content { max-width: 750px; margin: 0 auto; }
+.hero-eyebrow {
+  display: inline-block; background: var(--olive);
+  color: #fff; font-size: 0.82rem; font-weight: 600;
+  padding: 6px 18px; border-radius: 50px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  color: #fff; margin-bottom: 18px;
+}
+.hero h1 span { color: var(--gold-warm); }
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.88);
+  margin-bottom: 32px; max-width: 580px; margin-left: auto; margin-right: auto;
+}
+.hero-rating {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-bottom: 28px; color: rgba(255,255,255,0.92); font-size: 0.95rem;
+}
+.hero-stars { color: #f5c518; font-size: 1.15rem; letter-spacing: 1px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--olive); color: #fff; border: none; border-radius: 50px;
+  padding: 16px 36px; font-size: 1.1rem; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(139,126,59,0.35);
+}
+.btn-primary:hover { background: var(--olive-dark); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(139,126,59,0.45); }
+.btn-primary svg { width: 20px; height: 20px; }
+.hero-trust {
+  margin-top: 22px; font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ============ TRUST BAR ============ */
+.trust-bar {
+  background: var(--white); padding: 40px 24px;
+  border-bottom: 1px solid #eee;
+}
+.trust-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px; text-align: center;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.trust-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--sage-bg); display: flex; align-items: center; justify-content: center;
+}
+.trust-icon svg { width: 24px; height: 24px; fill: var(--olive); }
+.trust-item h4 { font-family: 'Inter', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--olive); }
+.trust-item p { font-size: 0.85rem; color: var(--light-text); }
+
+@media (max-width: 600px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============ SERVICES ============ */
+.services { background: var(--sage-bg); padding: 80px 24px; }
+.section-eyebrow {
+  display: inline-block; color: var(--olive); font-size: 0.82rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 14px; }
+.section-sub { font-size: 1.05rem; color: var(--light-text); max-width: 600px; margin: 0 auto 48px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.service-card {
+  background: var(--white); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+.service-card-img {
+  width: 100%; height: 200px; object-fit: cover;
+  background-size: cover; background-position: center;
+}
+.service-card-body { padding: 24px; }
+.service-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.service-card p { font-size: 0.92rem; color: var(--body-text); margin-bottom: 12px; }
+.service-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--olive); font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; transition: gap 0.2s;
+}
+.service-link:hover { gap: 10px; }
+
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+}
+
+/* ============ ABOUT ============ */
+.about { background: var(--white); padding: 80px 24px; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.about-img {
+  background: url('images/meetyourtherapist.webp') center/cover no-repeat;
+  width: 100%; height: 420px; border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.about-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 16px; }
+.about-text p { margin-bottom: 14px; font-size: 0.98rem; }
+.about-highlight {
+  background: var(--sage-bg); border-left: 4px solid var(--olive);
+  padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 20px;
+  font-weight: 500; color: var(--dark-text);
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-img { height: 280px; }
+}
+
+/* ============ WHY CHOOSE US ============ */
+.why-us { background: var(--dark); padding: 80px 24px; color: #fff; }
+.why-us .section-title { color: #fff; }
+.why-us .section-sub { color: rgba(255,255,255,0.65); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.why-image {
+  width: 100%; height: 460px; border-radius: 16px;
+  background: url('images/Other Salons Rush You Through..png') center/cover no-repeat;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.why-list { display: flex; flex-direction: column; gap: 28px; }
+.why-item { display: flex; gap: 16px; }
+.why-num {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(168,154,79,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--gold-warm); font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.why-item h3 { color: var(--gold-warm); font-size: 1.05rem; margin-bottom: 4px; }
+.why-item p { font-size: 0.92rem; color: rgba(255,255,255,0.72); }
+
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-image { height: 300px; }
+}
+
+/* ============ REVIEWS ============ */
+.reviews { background: var(--warm-cream); padding: 80px 24px; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.review-card {
+  background: var(--white); border-radius: 16px; padding: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.review-stars { color: #f5c518; margin-bottom: 14px; font-size: 1rem; letter-spacing: 1px; }
+.review-card p { font-size: 0.93rem; color: var(--body-text); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-name { font-weight: 600; color: var(--dark-text); font-size: 0.92rem; }
+.review-source { font-size: 0.8rem; color: var(--light-text); }
+.reviews-cta { text-align: center; margin-top: 40px; }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid var(--olive); color: var(--olive);
+  background: transparent; border-radius: 50px;
+  padding: 12px 28px; font-size: 0.95rem; font-weight: 600;
+  text-decoration: none; transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--olive); color: #fff; }
+
+@media (max-width: 768px) {
+  .reviews-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+}
+
+/* ============ BRANDS ============ */
+.brands { background: var(--white); padding: 56px 24px; }
+.brands-strip {
+  display: flex; justify-content: center; align-items: center;
+  flex-wrap: wrap; gap: 32px 48px; margin-top: 32px;
+}
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; color: var(--light-text);
+  opacity: 0.65; font-weight: 600; white-space: nowrap;
+}
+
+/* ============ GALLERY ============ */
+.gallery { background: var(--sage-bg); padding: 80px 24px; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 14px;
+}
+.gallery-item {
+  border-radius: 14px; overflow: hidden;
+  background-size: cover; background-position: center;
+  transition: transform 0.3s;
+}
+.gallery-item:hover { transform: scale(1.02); }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+  .gallery-item.tall { grid-row: span 1; }
+  .gallery-item.wide { grid-column: span 1; }
+}
+
+/* ============ HOURS & MAP ============ */
+.info-section { background: var(--white); padding: 80px 24px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.info-card {
+  background: var(--sage-bg); border-radius: 16px; padding: 36px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.info-card h3 { font-size: 1.4rem; margin-bottom: 20px; }
+.hours-table { width: 100%; border-collapse: collapse; }
+.hours-table tr { border-bottom: 1px solid #e0ddd6; }
+.hours-table td { padding: 11px 0; font-size: 0.95rem; }
+.hours-table td:last-child { text-align: right; font-weight: 600; }
+.hours-table tr.closed td:last-child { color: #c0392b; }
+.map-embed {
+  width: 100%; height: 100%; min-height: 340px;
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+@media (max-width: 768px) {
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ CONTACT ============ */
+.contact { background: var(--sage-bg); padding: 80px 24px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-info h2 { font-size: 1.8rem; margin-bottom: 16px; }
+.contact-info > p { margin-bottom: 24px; font-size: 0.98rem; }
+.contact-details { display: flex; flex-direction: column; gap: 18px; margin-bottom: 28px; }
+.contact-detail { display: flex; align-items: center; gap: 14px; }
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--olive); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg { width: 20px; height: 20px; fill: #fff; }
+.contact-detail-text { font-size: 0.95rem; }
+.contact-detail-text a { color: var(--olive); text-decoration: none; font-weight: 500; }
+.contact-detail-text a:hover { text-decoration: underline; }
+.contact-detail-label { font-size: 0.8rem; color: var(--light-text); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.contact-social { display: flex; gap: 12px; margin-top: 8px; }
+.contact-social a {
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; transition: opacity 0.2s, transform 0.2s;
+}
+.contact-social a:hover { opacity: 0.8; transform: translateY(-2px); }
+.contact-social a img { width: 38px; height: 38px; object-fit: contain; }
+
+.contact-form { background: var(--white); border-radius: 16px; padding: 36px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+.contact-form h3 { font-size: 1.3rem; margin-bottom: 20px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 0.85rem; font-weight: 500;
+  color: var(--dark-text); margin-bottom: 6px;
+}
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 12px 16px; border: 1px solid #ddd;
+  border-radius: 10px; font-family: inherit; font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none; border-color: var(--olive);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  width: 100%; padding: 14px; background: var(--olive); color: #fff;
+  border: none; border-radius: 50px; font-size: 1rem; font-weight: 600;
+  cursor: pointer; transition: background 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+.form-submit:hover { background: var(--olive-dark); transform: translateY(-1px); }
+.form-submit.success { background: var(--green-wa); pointer-events: none; }
+.form-success-msg { text-align: center; padding: 40px 20px; }
+.form-success-msg h3 { color: var(--green-wa); margin-bottom: 10px; }
+.form-success-msg p { color: var(--body-text); margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ URGENCY BANNER ============ */
+.urgency-banner {
+  background: linear-gradient(135deg, var(--olive) 0%, var(--olive-dark) 100%);
+  padding: 48px 24px; text-align: center; color: #fff;
+}
+.urgency-banner h2 { color: #fff; font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 12px; }
+.urgency-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.88); margin-bottom: 24px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--olive); border: none; border-radius: 50px;
+  padding: 14px 32px; font-size: 1.05rem; font-weight: 600;
+  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
+
+/* ============ FOOTER ============ */
+.site-footer {
+  background: var(--dark); padding: 40px 24px 24px; color: rgba(255,255,255,0.5);
+  text-align: center; font-size: 0.85rem;
+}
+.footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold-warm); }
+.footer-credit { margin-top: 12px; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+.footer-credit a { color: rgba(255,255,255,0.45); text-decoration: none; }
+.footer-credit a:hover { color: var(--gold-warm); }
+
+/* ============ FLOATING WHATSAPP ============ */
+.whatsapp-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 998;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--green-wa); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+.whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+
+/* ============ ANIMATIONS ============ */
+.fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.will-animate { opacity: 0; transform: translateY(30px); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="site-name">Cloud Nine Beauty</a>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header-nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/447715879518" target="_blank" rel="noopener" class="btn-wa-header">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="btn-cta-header">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-content fade-up">
+    <div class="hero-eyebrow">Coleraine's 5-Star Beauty Salon</div>
+    <h1>Professional Facials, Skincare &amp; Beauty <span>That Makes You Glow</span></h1>
+    <p class="hero-sub">Expert treatments from dermaplaning to chemical peels, luxury facials to flawless makeup — all from the heart of Coleraine. Walk out looking and feeling like the best version of yourself.</p>
+    <div class="hero-rating">
+      <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>4.8 stars on Google &bull; 100% Recommended on Facebook</span>
+    </div>
+    <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="btn-primary">
+      Book Your Appointment &#8594;
+    </a>
+    <p class="hero-trust">14 Dunmore St, Coleraine &bull; Open Tue–Sat &bull; Book online or WhatsApp us</p>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid fade-up">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h4>4.8 Stars</h4>
+        <p>Google Reviews</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h4>100%</h4>
+        <p>Recommended on Facebook</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h4>Qualified</h4>
+        <p>Fully Insured Therapist</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-8.038 0l-2.387.477a2 2 0 00-1.022.547M12 2a4 4 0 100 8 4 4 0 000-8z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h4>1-on-1</h4>
+        <p>Personal Attention</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container" style="text-align:center;">
+    <div class="section-eyebrow fade-up">What We Offer</div>
+    <h2 class="section-title fade-up">Treatments That Get You Compliments</h2>
+    <p class="section-sub fade-up">From advanced skin treatments to luxury pampering — every service is designed to leave you looking incredible and feeling even better.</p>
+
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image: url('images/See the Space Where the Magic Happens5.png');" role="img" aria-label="Luxury facial treatment room"></div>
+        <div class="service-card-body">
+          <h3>Luxury Facials</h3>
+          <p>Deep cleansing, hydrating and anti-ageing facials using Germaine de Capuccini and AlumierMD products. Your skin will thank you.</p>
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="service-link">Book This &#8594;</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image: url('images/acne and problem skin.png');" role="img" aria-label="Skincare consultation"></div>
+        <div class="service-card-body">
+          <h3>Acne &amp; Problem Skin</h3>
+          <p>Specialist consultations and targeted treatments for acne, pigmentation and skin concerns. We build a plan that actually works.</p>
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="service-link">Book This &#8594;</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image: url('images/makeup artistry.png');" role="img" aria-label="Makeup application"></div>
+        <div class="service-card-body">
+          <h3>Makeup Artistry</h3>
+          <p>Using Jane Iredale mineral makeup for a flawless, lasting finish. Perfect for weddings, events, or just feeling fabulous.</p>
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="service-link">Book This &#8594;</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image: url('images/Brows &amp; Threading.png');" role="img" aria-label="Eyebrow threading"></div>
+        <div class="service-card-body">
+          <h3>Brows &amp; Threading</h3>
+          <p>PhiBrow brow treatments and precision threading for perfectly shaped brows that frame your face beautifully.</p>
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="service-link">Book This &#8594;</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image: url('images/Body Sculpting &amp; More.png');" role="img" aria-label="Body sculpting"></div>
+        <div class="service-card-body">
+          <h3>Body Sculpting &amp; More</h3>
+          <p>Body sculpting, henna art, nail care and children's pamper packages. Something special for every age and occasion.</p>
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="service-link">Book This &#8594;</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image: url('images/ChatGPT Image Mar 26, 2026, 12_05_49 AM.png');" role="img" aria-label="Dermaplaning and chemical peels"></div>
+        <div class="service-card-body">
+          <h3>Dermaplaning &amp; Chemical Peels</h3>
+          <p>Remove dead skin, peach fuzz and reveal a brighter, smoother complexion. Instant results you can see and feel.</p>
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="service-link">Book This &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img fade-up"></div>
+      <div class="about-text fade-up">
+        <div class="section-eyebrow">Meet Your Therapist</div>
+        <h2>A 5-Star Salon Built on Results, Not Gimmicks</h2>
+        <p>Cloud Nine Beauty is a boutique beauty salon in the heart of Coleraine, run by Angela — a passionate, experienced beauty therapist who believes every woman deserves to feel confident in her own skin.</p>
+        <p>This isn't a production line. It's a bright, comfortable, welcoming space where you get genuine one-on-one care, honest advice, and treatments tailored to <em>your</em> skin and <em>your</em> goals. Whether you're battling breakouts, want that lit-from-within glow, or just need an hour of pure pampering — you're in the right place.</p>
+        <div class="about-highlight">
+          We use only professional-grade products from AlumierMD, Germaine de Capuccini, and Jane Iredale — because your skin deserves better than off-the-shelf.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="fade-up">
+        <div class="section-eyebrow" style="color:var(--gold-warm);">Why Cloud Nine</div>
+        <h2 class="section-title">Other Salons Rush You Through.<br>We Actually Care About Your Skin.</h2>
+        <div class="why-list" style="margin-top:32px;">
+          <div class="why-item">
+            <div class="why-num">1</div>
+            <div>
+              <h3>Genuine Personal Attention</h3>
+              <p>No conveyor belt. Angela takes the time to understand your skin, your lifestyle, and what results you're after before recommending a single product or treatment.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">2</div>
+            <div>
+              <h3>Professional-Grade Products Only</h3>
+              <p>AlumierMD, Germaine de Capuccini, Epionce, Jane Iredale — the same brands used in top skin clinics. Your face deserves more than supermarket skincare.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">3</div>
+            <div>
+              <h3>Results You Can Actually See</h3>
+              <p>Clients don't just feel good when they leave — they get stopped and asked "what have you done to your skin?" That's the Cloud Nine effect.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">4</div>
+            <div>
+              <h3>Affordable Luxury</h3>
+              <p>5-star treatments at prices that won't make you wince. Plus a loyalty stamp card so regular visits actually save you money.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-image fade-up"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="container" style="text-align:center;">
+    <div class="section-eyebrow fade-up">Real Reviews</div>
+    <h2 class="section-title fade-up">Don't Take Our Word for It — Listen to Our Clients</h2>
+    <p class="section-sub fade-up">100% recommended on Facebook with 32+ reviews. Here's what real customers are saying.</p>
+
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Bright, comfortable salon and Angela is lovely. She always goes the extra mile with attention to detail and personalised colour choices. Highly recommend!"</p>
+        <div class="review-name">Happy Client</div>
+        <div class="review-source">Google Review</div>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Since moving to Coleraine, this has been my one and only stop for all my waxing needs! The staff are really friendly and always try their best to fit me in at short notice. Prices are very reasonable too."</p>
+        <div class="review-name">Loyal Customer</div>
+        <div class="review-source">Yelp Review</div>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Angela is amazing — so welcoming, such attention to detail, and my skin has never looked better. I get compliments constantly now. Cloud Nine is my happy place!"</p>
+        <div class="review-name">Regular Client</div>
+        <div class="review-source">Facebook Review</div>
+      </div>
+    </div>
+
+    <div class="reviews-cta fade-up">
+      <a href="https://www.google.com/maps/search/?api=1&query=Cloud+Nine+Beauty+14+Dunmore+St+Coleraine+BT52+1EL" target="_blank" rel="noopener" class="btn-outline">
+        See All Reviews on Google
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS ============ -->
+<section class="brands fade-up">
+  <div class="container" style="text-align:center;">
+    <div class="section-eyebrow">Trusted Brands</div>
+    <h2 class="section-title" style="font-size:clamp(1.4rem,3vw,2rem);">We Only Use Products We'd Put on Our Own Skin</h2>
+    <div class="brands-strip">
+      <span class="brand-name">AlumierMD</span>
+      <span class="brand-name">Germaine de Capuccini</span>
+      <span class="brand-name">Jane Iredale</span>
+      <span class="brand-name">Epionce</span>
+      <span class="brand-name">Eminence Organic</span>
+      <span class="brand-name">Vita Liberata</span>
+      <span class="brand-name">Bellamianta</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery fade-up" id="gallery">
+  <div class="container" style="text-align:center;">
+    <div class="section-eyebrow">Inside Cloud Nine</div>
+    <h2 class="section-title" style="margin-bottom:40px;">See the Space Where the Magic Happens</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item tall" style="background-image: url('images/cloud9outside.png');"></div>
+      <div class="gallery-item" style="background-image: url('images/See the Space Where the Magic Happens 1.png');"></div>
+      <div class="gallery-item" style="background-image: url('images/See the Space Where the Magic Happens 2.png');"></div>
+      <div class="gallery-item" style="background-image: url('images/See the Space Where the Magic Happens 3.png');"></div>
+      <div class="gallery-item wide" style="background-image: url('images/See the Space Where the Magic Happens4.png');"></div>
+      <div class="gallery-item" style="background-image: url('images/See the Space Where the Magic Happens5.png');"></div>
+      <div class="gallery-item" style="background-image: url('images/See the Space Where the Magic Happens6.png');"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOURS & MAP ============ -->
+<section class="info-section fade-up" id="hours">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Opening Hours</h3>
+        <table class="hours-table">
+          <tr class="closed"><td>Monday</td><td>Closed</td></tr>
+          <tr><td>Tuesday</td><td>7:30 AM — 4:00 PM</td></tr>
+          <tr><td>Wednesday</td><td>7:30 AM — 7:00 PM</td></tr>
+          <tr><td>Thursday</td><td>7:30 AM — 7:00 PM</td></tr>
+          <tr><td>Friday</td><td>7:30 AM — 4:00 PM</td></tr>
+          <tr><td>Saturday</td><td>7:00 AM — 1:00 PM</td></tr>
+          <tr class="closed"><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <div style="margin-top:24px;">
+          <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;">Book Your Slot &#8594;</a>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2295.5!2d-6.6701549!3d55.1305276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s14+Dunmore+St%2C+Coleraine+BT52+1EL!5e0!3m2!1sen!2suk!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Cloud Nine Beauty Location"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact fade-up" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2>Have a Question? Want to Know What Treatment Is Right for You?</h2>
+        <p>Drop us a message and Angela will get back to you personally. Or skip the wait and book directly through Fresha.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 014.12 4.18 2 2 0 016.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">Phone / WhatsApp</div>
+              <a href="tel:+447715879518">+44 7715 879518</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon" style="background:var(--green-wa);">
+              <svg viewBox="0 0 24 24" fill="#fff" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">WhatsApp</div>
+              <a href="https://wa.me/447715879518" target="_blank" rel="noopener">Message Us on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">Address</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Cloud+Nine+Beauty+14+Dunmore+St+Coleraine+BT52+1EL" target="_blank" rel="noopener">14 Dunmore St, Coleraine, BT52 1EL</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon" style="background:transparent;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">Opening Hours</div>
+              <span style="font-size:0.95rem;">Tue–Fri from 7:30 AM | Sat from 7:00 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="https://www.facebook.com/cloudninebeautycoleraine/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.webp" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/cloudninebeautycoleraine/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.webp" alt="Instagram">
+          </a>
+          <a href="https://wa.me/447715879518" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <img src="images/whatsapp.webp" alt="WhatsApp">
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Cloud+Nine+Beauty+14+Dunmore+St+Coleraine+BT52+1EL" target="_blank" rel="noopener" aria-label="Google">
+            <img src="images/google.webp" alt="Google Reviews">
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up" id="contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="enquiry-form">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="redirect" value="">
+          <input type="hidden" name="subject" value="New enquiry from Cloud Nine Beauty website">
+          <div style="position:absolute;left:-9999px;" aria-hidden="true">
+            <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Sarah">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 07712 345678">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="e.g. sarah@email.com">
+          </div>
+          <div class="form-group">
+            <label for="service">What Are You Interested In?</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="Facial">Facial / Skincare Treatment</option>
+              <option value="Dermaplaning">Dermaplaning</option>
+              <option value="Chemical Peel">Chemical Peel</option>
+              <option value="Acne Treatment">Acne / Problem Skin</option>
+              <option value="Makeup">Makeup / Special Occasion</option>
+              <option value="Brows">Brows / Threading</option>
+              <option value="Body Sculpting">Body Sculpting</option>
+              <option value="Other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message &#8594;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ URGENCY BANNER ============ -->
+<section class="urgency-banner">
+  <div class="container fade-up">
+    <h2>Ready to Glow? Your Skin Transformation Starts Here.</h2>
+    <p>Book your appointment now and find out why hundreds of Coleraine women trust Cloud Nine Beauty with their skin.</p>
+    <a href="https://www.fresha.com/lvp/cloud-nine-beauty-dunmore-street-Wqoklv" target="_blank" rel="noopener" class="btn-white">
+      Book Your Appointment &#8594;
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>&copy; 2026 Cloud Nine Beauty, 14 Dunmore St, Coleraine BT52 1EL. All rights reserved.</p>
+    <p class="footer-credit">Website by <a href="https://www.realfastwebsite.com" target="_blank" rel="noopener">www.realfastwebsite.com</a></p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP BUTTON ============ -->
+<a href="https://wa.me/447715879518" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ============ MOBILE MENU ============ */
+const menuToggle = document.querySelector('.menu-toggle');
+const headerNav = document.querySelector('.header-nav');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  headerNav.classList.toggle('open');
+});
+document.querySelectorAll('.header-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    headerNav.classList.remove('open');
+  });
+});
+
+/* ============ SCROLL ANIMATIONS (Progressive Enhancement) ============ */
+if ('IntersectionObserver' in window) {
+  const fadeEls = document.querySelectorAll('.fade-up');
+  fadeEls.forEach(el => el.classList.add('will-animate'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+}
+
+/* ============ HEADER SHADOW ON SCROLL ============ */
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 2px 16px rgba(0,0,0,0.1)';
+  } else {
+    header.style.boxShadow = '0 1px 8px rgba(0,0,0,0.06)';
+  }
+});
+
+/* ============ WEB3FORMS AJAX SUBMIT ============ */
+const form = document.getElementById('enquiry-form');
+const submitBtn = form.querySelector('.form-submit');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const formData = new FormData(form);
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      submitBtn.classList.add('success');
+      submitBtn.textContent = 'Sent!';
+      setTimeout(() => {
+        const formContainer = document.getElementById('contact-form');
+        formContainer.innerHTML = `
+          <div class="form-success-msg">
+            <h3>Message Received!</h3>
+            <p>Thanks for getting in touch. Angela will get back to you shortly.</p>
+            <p style="font-size:0.9rem;color:var(--light-text);">Need a faster reply?</p>
+            <a href="https://wa.me/447715879518" target="_blank" rel="noopener" class="btn-primary" style="margin-top:12px;background:var(--green-wa);">
+              WhatsApp Us Now
+            </a>
+          </div>
+        `;
+      }, 800);
+    } else {
+      submitBtn.textContent = 'Something went wrong — try again';
+      submitBtn.disabled = false;
+    }
+  } catch (err) {
+    submitBtn.textContent = 'Something went wrong — try again';
+    submitBtn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
